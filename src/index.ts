@@ -10,6 +10,10 @@ import { dirname } from 'path';
 
 import { uploadFile } from './aws.js';
 
+import { createClient } from "redis";
+const publisher = createClient();
+publisher.connect();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
